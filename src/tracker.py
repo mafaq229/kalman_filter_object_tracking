@@ -110,12 +110,12 @@ class ObjectTracker:
         out_frame = frame.copy()
         
         # Draw measurement
-        # z_x, z_y, z_w, z_h = measurement
-        # cv2.circle(out_frame, (int(z_x), int(z_y)), 20, (0, 0, 255), 2)
-        # cv2.rectangle(out_frame, 
-        #              (int(z_x) - z_w // 2, int(z_y) - z_h // 2),
-        #              (int(z_x) + z_w // 2, int(z_y) + z_h // 2),
-        #              (0, 0, 255), 2)
+        z_x, z_y, z_w, z_h = measurement
+        cv2.circle(out_frame, (int(z_x), int(z_y)), 20, (0, 0, 255), 2)
+        cv2.rectangle(out_frame, 
+                     (int(z_x) - z_w // 2, int(z_y) - z_h // 2),
+                     (int(z_x) + z_w // 2, int(z_y) + z_h // 2),
+                     (0, 0, 255), 2)
         
         # Draw prediction
         pred_x, pred_y = prediction

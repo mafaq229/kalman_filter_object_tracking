@@ -21,8 +21,8 @@ def process_video(video_path, template_region, detector_type="template", save_fr
 
     # Initialize configuration
     config = TrackingConfig(
-        noise_std_x=5.0,
-        noise_std_y=5.0,
+        noise_std_x=0.5,
+        noise_std_y=0.5,
         template_size={'w': template_region['w'], 'h': template_region['h']}
     )
 
@@ -78,7 +78,7 @@ def process_video(video_path, template_region, detector_type="template", save_fr
 def main():
     """Main function to demonstrate Kalman Filter tracking."""
     # Example usage
-    video_path = "test1.mp4"  # Replace with your video path
+    video_path = "input/test1.mp4"  # Replace with your video path
     
     # Define template region
     template_region = {
@@ -89,12 +89,12 @@ def main():
     }
     
     # Optional: specify frames to save
-    # save_frames = {
-    #     10: "output/frame_10.jpg",
-    #     20: "output/frame_20.jpg"
-    # }
+    save_frames = {
+        10: "output/frame_10.jpg",
+        20: "output/frame_20.jpg"
+    }
 
-    process_video(video_path, template_region, detector_type="template")
+    process_video(video_path, template_region, detector_type="template", save_frames=save_frames)
 
 
 if __name__ == "__main__":
